@@ -56,6 +56,7 @@ python src/create_tfa_model.py
 ```
 
 ## Example: Running a Notebook
-
-Run jupyter notebook --ip 0.0.0.0 --no-browser --allow-root inside the docker container.
-Using VScode or Jupyter connect to the provided server and run the .ipynb files:
+```bash
+jupyter notebook --ip 0.0.0.0 --no-browser --allow-root
+```
+Run this inside the docker container. Using VScode or Jupyter connect to the provided server and run the .ipynb files.
