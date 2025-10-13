@@ -3,6 +3,9 @@ __pycache__/
 *.py[codz]
 *$py.class
 
+work/
+.ipynb_checkpoints/
+
 # C extensions
 *.so
 
@@ -205,3 +208,14 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Project-specific ignores
+# Ignore parquet files
+*.parquet
+
+# Ignore ic50 folder in drug target simulation results
+results/drug_target_simulation/HEX_WT/ic50/
+
+# Ignore control coefficients matrix folders
+results/mca_workflow/control_coefficients_matrix_WT/
+results/mca_workflow/control_coefficients_matrix_MUT/
