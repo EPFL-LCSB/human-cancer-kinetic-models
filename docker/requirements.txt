@@ -27,3 +27,5 @@ seaborn
 # statsmodels
 plotly
 kaleido
+joblib
+tqdm
