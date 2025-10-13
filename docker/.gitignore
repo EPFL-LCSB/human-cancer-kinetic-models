@@ -1,0 +1,10 @@
+# solver binaries
+solvers/*
+
+# Gurobi key info
+gurobi.lic
+
+# LP files
+*.lp
+
+work/*

@@ -223,3 +223,8 @@ results/drug_target_simulation/HEX_WT/ic50/
 # Ignore control coefficients matrix folders
 results/mca_workflow/control_coefficients_matrix_WT/
 results/mca_workflow/control_coefficients_matrix_MUT/
+
+# Ignore kin_logs data folder
+data/kin_logs/
+data/steady_state_samples/samples_MUT_5000_for_MCA.csv
+data/steady_state_samples/samples_WT_5000_for_MCA.csv
