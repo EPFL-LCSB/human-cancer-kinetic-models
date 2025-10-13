@@ -1,0 +1,6 @@
+#!/bin/sh
+docker run 	--rm -it -p 8888:8888		\
+		-v $(pwd)/work:/home/kincancer/work \
+		-v $(pwd)/..:/kincancer	\
+		-v $(pwd)/../../smolfem:/smolfem	\
+		human_kinetic_cancer_docker

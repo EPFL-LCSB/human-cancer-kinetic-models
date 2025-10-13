@@ -33,7 +33,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         libhdf5-dev     \
         libhdf5-serial-dev
 
-ENV USER NOMAD
+ENV USER kincancer
 ENV HOME /home/$USER
 
 RUN useradd -ms "/bin/bash" "$USER"
@@ -87,7 +87,7 @@ RUN rm -rf /solvers
 RUN /utils/activate_gurobi.sh
 
 # Make the workspace folder that will link the sources
-RUN mkdir /NOMAD
+RUN mkdir /kincancer
 
 COPY .bashrc $HOME
 RUN chown "$USER" "$HOME/.bashrc"
@@ -97,12 +97,12 @@ RUN chown "$USER" "$HOME/.bashrc"
 
 USER $USER
 RUN mkdir ./work
-WORKDIR /NOMAD
+WORKDIR /kincancer
 
 # Load your package in development mode on startup
-ENTRYPOINT ["/bin/bash", "-c", "pip install --user -e /NOMAD/docker/pytfa && \
-pip install --user -e /NOMAD/docker/skimpy &&\
-pip install --user -e /NOMAD/docker/NRAplus &&\
+ENTRYPOINT ["/bin/bash", "-c", "pip install --user -e /kincancer/docker/pytfa && \
+pip install --user -e /kincancer/docker/skimpy &&\
+pip install --user -e /kincancer/docker/NRAplus &&\
                                 $0 $*"]
 
 CMD /bin/bash
