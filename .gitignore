@@ -210,6 +210,10 @@ marimo/_lsp/
 __marimo__/
 
 # Project-specific ignores
+# Ignore macOS system files
+*.DS_Store
+*.DS_Store?
+
 # Ignore parquet files
 *.parquet
 
