@@ -32,7 +32,7 @@ docker pull iliastoumpe/human_kinetic_cancer_docker:latest
 
 Then rename the image:
 ```sh
-docker tag iliastoumpe/human_kinetic_cancer_docker human_kinetic_cancer_docker
+docker tag iliastoumpe/human_kinetic_cancer_docker:latest human_kinetic_cancer_docker
 ```
 
 The Docker image has been successfully installed and tested on both macOS (M1 chip) and Ubuntu systems.
