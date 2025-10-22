@@ -4,7 +4,7 @@
 A computational framework for building and using kinetic models of cancer metabolism. 
 This repository contains scripts, models, and data for simulating and analyzing ovarian cancer metabolism with and without a BRCA1 mutation. It can be used to reproduce all the work presented in the research article "Multi-omics-driven kinetic modeling reveals metabolic vulnerabilities and differential drug-response dynamics in ovarian cancer".
 
-The accompanying data and results are available in the [Zenodo directory](https://zenodo.org/records/17304777) and the links provided therein.
+The accompanying data and results are available in the [Zenodo repository](https://zenodo.org/records/17304777) and the links provided therein.
 
 ## Installation
 1. Clone the repository:
