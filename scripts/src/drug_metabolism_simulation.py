@@ -148,11 +148,11 @@ for i in tqdm(solutions):
 
 solutions = sol
 final_res = ODESolutionPopulation(solutions)
-final_res.data.to_csv(path_to_ode_conc_solutions.format(TARGET_NAME))
+final_res.data.to_parquet(path_to_ode_conc_solutions.format(TARGET_NAME))
 
 
 print('Loading ODE concentration solutions for post-processing...')
-final_res = pd.read_csv(path_to_ode_conc_solutions.format(TARGET_NAME))
+final_res = pd.read_parquet(path_to_ode_conc_solutions.format(TARGET_NAME))
 
 # In case the solutions need to be loaded again
 solutions = []
@@ -193,12 +193,10 @@ for ix, df in fluxes_dict.items():
 sol_cols = list(flux_solutions[0].fluxes.columns)
 total_flux_df = pd.DataFrame(columns=['model_ix','time'] + sol_cols)
 for i, sol in enumerate(flux_solutions):
-    if i == 0:
-        continue
     sol_df = pd.DataFrame(sol.fluxes)
     sol_df['time'] = sol.time
     sol_df['model_ix'] = sol.model_ix
     total_flux_df = total_flux_df.append(sol_df)
 
-total_flux_df.to_csv(path_to_ode_flux_solutions.format(TARGET_NAME))
+total_flux_df.to_parquet(path_to_ode_flux_solutions.format(TARGET_NAME))
 print('All results saved successfully.')
