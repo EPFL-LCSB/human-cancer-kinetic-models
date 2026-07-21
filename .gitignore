@@ -228,3 +228,6 @@ results/mca_workflow/control_coefficients_matrix_MUT/
 data/kin_logs/
 data/steady_state_samples/samples_MUT_5000_for_MCA.csv
 data/steady_state_samples/samples_WT_5000_for_MCA.csv
+
+# Ignore local solver binaries and licenses
+docker/solvers/
