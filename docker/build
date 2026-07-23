@@ -1,2 +1,11 @@
 #!/bin/sh
-docker build -t human_kinetic_cancer_docker .
+HOST_USER=$(id -un)
+HOST_UID=$(id -u)
+HOST_GID=$(id -g)
+
+docker build \
+  --build-arg HOST_USER="$HOST_USER" \
+  --build-arg HOST_UID="$HOST_UID" \
+  --build-arg HOST_GID="$HOST_GID" \
+  -t human_kinetic_cancer_docker \
+  .

@@ -95,7 +95,24 @@ RUN chown "$USER" "$HOME/.bashrc"
 
 #Finalizing installation
 
-USER $USER
+USER root
+
+ARG HOST_USER=kincancer
+ARG HOST_UID=1000
+ARG HOST_GID=1000
+
+RUN if [ "${HOST_USER}" != "${USER}" ]; then \
+        groupmod -o -g ${HOST_GID} -n ${HOST_USER} ${USER} && \
+        usermod -o -u ${HOST_UID} -g ${HOST_GID} -l ${HOST_USER} ${USER}; \
+    else \
+        groupmod -o -g ${HOST_GID} ${USER} && \
+        usermod -o -u ${HOST_UID} -g ${HOST_GID} ${USER}; \
+    fi && \
+    chown -R ${HOST_UID}:${HOST_GID} /home/kincancer /kincancer
+
+ENV USER=${HOST_USER}
+
+USER ${HOST_USER}
 RUN mkdir ./work
 WORKDIR /kincancer
 
