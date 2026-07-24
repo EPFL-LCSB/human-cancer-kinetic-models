@@ -89,6 +89,14 @@ class DrugBankAnalyzer:
                     if group_elem.text:
                         groups.append(group_elem.text)
 
+            # Extract the DrugBank indication text
+            indication_elem = drug_elem.find('db:indication', self.ns)
+            indication = (
+                indication_elem.text.strip()
+                if indication_elem is not None and indication_elem.text
+                else 'Not reported'
+            )
+
             # Define a list of interaction types to check (targets, enzymes, carriers, transporters)
             interaction_types = ['db:targets', 'db:enzymes', 'db:carriers', 'db:transporters']
 
@@ -125,6 +133,7 @@ class DrugBankAnalyzer:
                                                 'name': drug_name,
                                                 'atc_codes': atc_codes,
                                                 'groups': groups,
+                                                'indication': indication,
                                                 'actions': actions
                                             })
                                             found_target_for_drug = True
@@ -228,6 +237,7 @@ for target_name, genes in mca_genes.items():
                             'Drug Name': drug['name'],
                             'ATC Codes': ", ".join(drug['atc_codes']) if drug['atc_codes'] else 'Unmapped',
                             'Groups': ", ".join(drug['groups']) if drug['groups'] else 'Unmapped',
+                            'DrugBank Indication': drug['indication'],
                             'Actions (Drug Effects)': ", ".join(drug['actions']) if drug['actions'] else 'Unmapped'
                         })
                         drug_id_to_actions[drug_id] = set(drug['actions']) if drug['actions'] else set()
