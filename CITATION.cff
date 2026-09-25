@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata below."
+type: software
+title: "Multi-omics-constrained kinetic models quantify pathway rewiring and predict metabolic vulnerabilities in BRCA1-deficient ovarian cancer"
+authors:
+
+given-names: Ilias
+family-names: Toumpe
+orcid: "https://orcid.org/0009-0008-6375-3567"
+version: "1.0.1"
+date-released: 2026-09-25
+license: Apache-2.0
+repository-code: "https://github.com/EPFL-LCSB/human-cancer-kinetic-models"
+abstract: "Finalized code, kinetic models, analysis workflows, and reproducibility materials associated with the manuscript by Toumpe et al."
