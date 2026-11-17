@@ -2,7 +2,7 @@
 
 ### Overview
 A computational framework for building and using kinetic models of cancer metabolism. 
-This repository contains scripts, models, and data for simulating and analyzing ovarian cancer metabolism with and without a BRCA1 mutation. It can be used to reproduce all the work presented in the research article "Multi-omics-constrained kinetic models quantify pathway rewiring and predict metabolic vulnerabilities in BRCA1-deficient ovarian cancer".
+This repository contains scripts, models, and data for simulating and analyzing ovarian cancer metabolism with and without a BRCA1 mutation. It can be used to reproduce the work presented in [Multi-omics-constrained kinetic models quantify pathway rewiring and predict metabolic vulnerabilities in BRCA1-deficient ovarian cancer](https://doi.org/10.1016/j.cels.2026.101781), published in *Cell Systems* (2026).
 
 The accompanying data and results are available in the [Zenodo repository](https://zenodo.org/records/17304777) and the links provided therein.
 
@@ -91,3 +91,10 @@ Alternatively, Gurobi can also be used, as the scripts are solver-agnostic and c
 
 ## Reproducing manuscript figures
 The main manuscript figures can be regenerated from the processed outputs already included in the repository or available through Zenodo. This route is separate from the full kinetic-model reconstruction workflow and does not require rerunning parameter fitting, sampling, or solver-heavy optimization workflows.
+
+## Citation
+If you use these models, data, or workflows, please cite:
+
+Toumpe, I., Masid, M., Hatzimanikatis, V., and Miskovic, L. (2026).
+Multi-omics-constrained kinetic models quantify pathway rewiring and predict metabolic vulnerabilities in BRCA1-deficient ovarian cancer.
+*Cell Systems*, 101781. https://doi.org/10.1016/j.cels.2026.101781
